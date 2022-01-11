@@ -31,7 +31,7 @@ navigator.geolocation.getCurrentPosition(position => {
     getWeather().then(weather => {
         document.querySelector('.weather').innerHTML = `
             <div class='right'>
-                <img src='http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png' alt=''>
+                <img src='https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png' alt=''>
                 <p class='temp'>${Math.floor(weather.main.temp)}</p>
             </div>
             <p class='city'>${weather.name}</p>
