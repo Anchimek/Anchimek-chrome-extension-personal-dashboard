@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+*{box-sizing: border-box;}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    text-shadow: 0px 0px 20px #242424;
+    height: 100vh;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: 35% 30% 35%;
+    grid-template-columns: repeat(3, calc(100% / 3));
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    grid-template-areas: 
+        "coin .. weather"
+        ".... timer ...."
+        "author .... ..."
+        ;
+    
+}
+
+.coins {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-area: coin;
+    height: 100%;
+    width: 100%;
+    padding: 1em;
+    .coin {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 40px;
+        .price {
+            margin: 0;
+        }
+        img {
+            margin-right: 1em;
+            height: 20px;
+            width: 20px;
+        }
+    }
+}
+
+.weather {
+    grid-area: weather;
+    height: 100%;
+    width: 100%;
+    padding: 1em 3em 0 0;
+    p {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+    .right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .temp {
+            font-size: 3rem;
+            margin-left: -.25em;
+        }
+    }
+    .city {
+        text-align: right;
+        letter-spacing: 1px;
+    }
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    grid-area: timer;
+    height: 100%;
+    width: 100%;
+}
+
+.photo-author {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 1.5em 1.5em;
+    grid-area: author;
+    height: 100%;
+    width: 300px;
+    font-size: 1.15rem;
+}
+
+@media all and (max-width: 500px) {
+    *{font-size: 0.75rem;}
+    .timer {
+        font-size: 4rem;
+    } 
+    .weather {
+        .right {
+            justify-content: flex-start;
+        }
+        img {
+            height: 60px;
+            width: 60px;
+        }
+    }
+}
